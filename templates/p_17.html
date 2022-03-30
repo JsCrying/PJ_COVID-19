@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <title>index</title>
+    <style>
+        .choice{
+            position: absolute;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 20px;
+            top: 70%;
+            left: 18%;
+            width: 400px;
+            padding: 10px;
+        }
+        .choice a{
+            width: 120px;
+            height: 80px;
+            box-shadow: 4px 8px 10px #888888;
+            text-decoration: none;
+            border-radius: inherit;
+            text-align: center;
+        }
+        .choice a:hover{
+            opacity: 0.3;
+        }
+        .virus img#a{
+            position: absolute;
+            width: 40px;
+            top: 100px;
+            left: 250px;
+            opacity: 0.3;
+            animation: domove 10s infinite;
+            animation-delay: 0.5s;
+        }
+        .virus img#a-{
+            position: absolute;
+            width: 40px;
+            top: 100px;
+            left: 250px;
+            opacity: 0.3;
+            animation: domove- 10s infinite;
+            animation-delay: 0.5s;
+        }
+        .virus img#b{
+            position: absolute;
+            width: 40px;
+            top: 100px;
+            left: 400px;
+            opacity: 0.3;
+            animation: domove 10s infinite;
+            animation-delay: 1.5s;
+        }
+        .virus img#b_{
+            position: absolute;
+            width: 40px;
+            top: 100px;
+            left: 400px;
+            opacity: 0.3;
+            animation: domove_ 10s infinite;
+            animation-delay: 1.5s;
+        }
+        .virus img#c{
+            position: absolute;
+            width: 40px;
+            top: 180px;
+            left: 550px;
+            opacity: 0.3;
+            animation: domove 10s infinite;
+            animation-delay: 1s;
+        }
+        .virus img#c-{
+            position: absolute;
+            width: 40px;
+            top: 180px;
+            left: 550px;
+            opacity: 0.3;
+            animation: domove- 10s infinite;
+            animation-delay: 1s;
+        }
+        .virus img#d{
+            position: absolute;
+            width: 40px;
+            top: 230px;
+            left: 350px;
+            opacity: 0.3;
+            animation: domove 10s infinite;
+            animation-delay: 2s;
+        }
+        .virus img#d_{
+            position: absolute;
+            width: 40px;
+            top: 230px;
+            left: 350px;
+            opacity: 0.3;
+            animation: domove_ 10s infinite;
+            animation-delay: 2s;
+        }
+        @keyframes domove{
+            0%{
+                transform: rotate(30deg);
+            }
+            25%{
+                transform: translate(30px, 60px) rotate(120deg);
+            }
+            50%{
+                transform: translate(-30px) rotate(210deg);
+            }
+            75%{
+                transform: translate(30px, -60px) rotate(300deg);
+            }
+            100%{
+                transform: rotate(30deg);
+            }
+        }
+        @keyframes domove-{
+            0%{
+                transform: rotate(30deg);
+            }
+            25%{
+                transform: translate(30px, 60px) rotate(120deg);
+            }
+            50%{
+                transform: translate(-100px) rotate(210deg);
+            }
+            75%{
+                transform: translate(30px, -60px) rotate(300deg);
+            }
+            100%{
+                transform: rotate(30deg);
+            }
+        }
+        @keyframes domove_{
+            0%{
+                transform: rotate(30deg);
+            }
+            25%{
+                transform: translate(30px, 60px) rotate(120deg);
+            }
+            50%{
+                transform: translate(100px) rotate(210deg);
+            }
+            75%{
+                transform: translate(30px, -60px) rotate(300deg);
+            }
+            100%{
+                transform: rotate(30deg);
+            }
+        }
+        .level{
+            position: absolute;
+            top: 15px;
+            left: 850px;
+            border-color: black;
+            z-index: 100;
+            display: none;
+        }
+        .level ul{
+            display: block;
+        }
+        .level ul li{
+            list-style: none;
+            margin-top: 15px;
+        }
+        .level ul li a{
+            color: #fff;
+            text-decoration: none;
+            padding: 6px 25px;
+            border-radius: 20px;
+            font-weight: 600;
+            background-color: #fff;
+            color: #2b1065;
+        }
+        .level ul li a:hover{
+            box-shadow: 2px 4px 6px #888888;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" id="menu">菜单</a>
+        <ul>
+            <li><a href="#" id="process" class="active">关卡</a></li>
+            <li><a href="#" id="achievement" class="active">成就</a></li>
+        </ul>
+    </header>
+    <div class="level">
+        <ul>
+            <li><a href="http://127.0.0.1:5000">Home Page</a></li>
+            <li><a href="http://127.0.0.1:5000/01">刚刚入侵人体</a></li>
+            <li><a href="http://127.0.0.1:5000/03">派遣先锋队伍</a></li>
+            <li><a href="http://127.0.0.1:5000/04">寻求变异之道</a></li>
+            <li><a href="http://127.0.0.1:5000/13">亲自领头出征</a></li>
+            <li><a href="http://127.0.0.1:5000/15">已经攻破城门</a></li>
+        </ul>
+    </div>
+    <div class="achievement_board">
+        <span>成就列表</span>
+        <div class="ending">
+            <div name="ending0">1.达成结局：英年早逝</div>
+            <div name="ending1">2.达成结局：无毒不丈夫</div>
+            <div name="ending2">3.达成结局：小病毒想当发明家</div>
+            <div name="ending3">4.达成结局：苦海无涯</div>
+            <div name="ending4">5.达成结局：空城计</div>
+            <div name="ending5">6.达成结局：君子报仇</div>
+            <div name="ending6">7.达成结局：人事已尽天命难违</div>
+            <div name="ending7">8.The End</div>
+        </div>
+    </div>
+    <div class="frame">
+        <div class="board">
+            <div class="antenna"><img src="{{ url_for('static', filename='broadcast-tower-solid.svg') }}" alt=""></div>
+            <div class="video">
+                <video id="video" controls="controls">
+                    <source src="{{ url_for('static', filename='./video/17 A 打了疫苗的人.mp4') }}" type="video/mp4" />
+                </video>
+            </div>
+            <div class="button play"><img src="{{ url_for('static', filename='play-circle-solid.svg') }}" alt=""></div>
+            <div class="button pause"><img src="{{ url_for('static', filename='pause-circle-solid.svg') }}" alt=""></div>
+            <div class="button stop"><img src="{{ url_for('static', filename='stop-circle-solid.svg') }}" alt=""></div>
+            <div class="button lines"><img src="{{ url_for('static', filename='grip-lines-solid.svg') }}" alt=""></div>        
+        </div>
+        <div class="knowledge">
+            <a href="#" id="science">科普</a>
+            <div class="content">
+                <span></span>
+                <div class="article">
+                    疫苗种类：</br>
+                    </br>
+                    1、灭活疫苗（安全性高，技术成熟，但仅激发体液免疫，生产要求高）</br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;灭活疫苗主要有效成分为灭活的病毒颗粒，包含所有的病毒结构组分，接近或等于天然病毒颗粒，是最易于研制的疫苗种类。灭活疫苗是一种传统疫苗技术，其安全性和有效性得到了充分验证，但也有缺点：
+                    </br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先是不能模拟病毒的感染过程，对免疫系统的刺激较弱，通常只产生以抗体为主的体液免疫；其次是需要先培养活病原体，再灭活做成疫苗，对生产的安全要求较高。此外，就新冠病毒而言，它具有4种结构蛋白以及其他功能蛋白，如果确认S蛋白为其形成免疫的关键成分，而灭活疫苗还含有其他组分蛋白，就相当于相等剂量下，灭活疫苗的S蛋白比例低于其它类型疫苗，有效成分降低，不利于产生足够强度的免疫反应。如此，在病毒培养和疫苗制备过程中，可能残留宿主蛋白或其他杂质成分，除了可能影响免疫效果外，同时增加了产生不良反应的可能性。
+                    </br></br>
+                    2、重组蛋白疫苗（效果和安全性高，产能较高）</br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重组蛋白疫苗的技术相对成熟，其本质是将有效的抗原成分经过基因工程改造，在其他细胞内完成蛋白表达，然后分离目标蛋白、添加保护剂等成为疫苗。
+                    </br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重组蛋白疫苗目标非常精确，就是病原体的关键蛋白成分，所以它的效果和安全性很可能优于灭活疫苗。其生产过程中也不会产生活病原体，对生物安全的要求低，培养细胞来生产病原体蛋白的效率很高，所以产能也高于灭活疫苗。但其缺点在于由于表达宿主的限制，复制出的蛋白与天然蛋白常常不同，可能影响免疫原性。后期需要进行纯化分离与封装，也面临杂质的影响。
+                    </br></br>
+                    3、病毒载体疫苗和核酸疫苗（产能最高，但不良反应多，安全性待观察）</br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这两种技术都是将编码病毒S蛋白的基因转到人体细胞中，让人体细胞自己来产生S蛋白。前者通过无害病毒（如腺病毒）作为载体，把S蛋白基因转入人体。后者是直接把S蛋白基因转入人体细胞。因此，这两种技术路线的疫苗，其实质是疫苗图纸。把疫苗图纸送入人体，人体就能依照图纸生产出疫苗来。蓝纸容易得到，且可以批量复制，故这两类疫苗的研发效率和生产效率很高，具有明显的优势。
+                    </br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;核酸疫苗分为mRNA和DNA疫苗两种，mRNA会在人体中降解，安全性不用担心；但DNA疫苗则有可能整合到人体基因里，其安全性有待观察，所以进展缓慢。从新冠mRNA疫苗来看，有效性已经得到了公认，但安全性上其不良反应明显高于灭活疫苗。一般认为，mRNA疫苗可以刺激人类的抗体免疫和细胞免疫，在细胞免疫的过程中，人体会有明显的不适。且细胞免疫比较复杂，如果过度则可能影响抗体免疫的效果，甚至会导致疾病。
+                    </br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="choice">
+        <a href="http://127.0.0.1:5000/20" class="left">走为上计</a>
+        <a href="http://127.0.0.1:5000/21" class="right">正面硬刚!</a>
+    </div>
+    <div class="virus">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="a">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="a-">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="b">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="b_">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="c">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="c-">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="d">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="d_">
+    </div>
+</body>
+</html>
+<script>
+    video.onended = function() {
+        document.getElementsByClassName("choice")[0].style.display = "flex";
+    }
+    var science_cnt = 0;
+    science.onclick = function() {
+        science_cnt %= 2;
+        if (science_cnt == 0) {
+            document.getElementsByClassName("content")[0].style.display = "flex";
+        }
+        else {
+            document.getElementsByClassName("content")[0].style.display = "none";
+        }
+        ++science_cnt;
+    }
+    var process_cnt = 0;
+    process.onclick = function() {
+        process_cnt %= 2;
+        if (process_cnt == 0) {
+            document.getElementsByClassName("level")[0].style.display = "inline";
+        }
+        else {
+            document.getElementsByClassName("level")[0].style.display = "none";
+        }
+        ++process_cnt;
+    }
+    var achievement_cnt = 0;
+    achievement.onclick = function() {
+        achievement_cnt %= 2;
+        if (achievement_cnt == 0) {
+            document.getElementsByClassName("achievement_board")[0].style.display = "inline";
+        }
+        else {
+            document.getElementsByClassName("achievement_board")[0].style.display = "none";
+        }
+        ++achievement_cnt;
+    }
+    var index;
+    var recv;
+    var str;
+    window.onload = function() {
+        xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        xhr.open('GET', '/achievement_judge');
+        xhr.send();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    recv = xhr.response;
+                    if (recv.ending0 == 1)
+                    document.getElementsByName('ending0')[0].style.textDecoration = "line-through";
+                    if (recv.ending1 == 1)
+                    document.getElementsByName('ending1')[0].style.textDecoration = "line-through";
+                    if (recv.ending2 == 1)
+                    document.getElementsByName('ending2')[0].style.textDecoration = "line-through";
+                    if (recv.ending3 == 1)
+                    document.getElementsByName('ending3')[0].style.textDecoration = "line-through";
+                    if (recv.ending4 == 1)
+                    document.getElementsByName('ending4')[0].style.textDecoration = "line-through";
+                    if (recv.ending5 == 1)
+                    document.getElementsByName('ending5')[0].style.textDecoration = "line-through";
+                    if (recv.ending6 == 1)
+                    document.getElementsByName('ending6')[0].style.textDecoration = "line-through";
+                    if (recv.ending7 == 1)
+                    document.getElementsByName('ending7')[0].style.textDecoration = "line-through";
+                }
+            }
+        }
+    }
+</script>

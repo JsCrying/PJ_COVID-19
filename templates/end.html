@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='end.css') }}">
+    <title>index</title>
+    <style>
+        .board span{
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            transform: translateX(-50%) translateY(-50%) scale(3);
+            font-weight: bold;
+            color: #888888;
+        }
+        .board .make span{
+            top: 40%;
+            transform: translateX(-50%) translateY(-50%) scale(2);
+        }
+        .board .make #bobaodiv{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%) scale(1.5);
+            overflow-y: hidden;
+            height: 30px; 
+            width: 120px; 
+            border: 4px solid #888888;
+            border-radius: 2px;
+        }
+        .board .make #bobaodiv .member{
+            text-align: center;
+            border: 1px solid black;
+            letter-spacing: 1px;
+            height: 28px;
+            padding: 3px;
+            animation: 8s make-scroll linear infinite;
+            animation-delay: 1s;
+        }
+        @keyframes make-scroll{
+            0%{
+                transform: translateY(0);
+            }
+            100%{
+                transform: translateY(-118px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="board">
+        <span>The End</span>
+        <div class="make">
+            <span>制作人员</span>
+            <div id="bobaodiv">
+                    <div class="member">绘图: 张馨怡</div>
+                    <div class="member">剧情: 郭响文</div>
+                    <div class="member">后期: 江刻优</div>
+                    <div class="member">前端: 杨之恒</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

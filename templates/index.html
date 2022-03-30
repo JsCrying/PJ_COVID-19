@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>index</title>
+    <style>
+        .choice{
+            position: absolute;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 20px;
+            top: 70%;
+            left: 18%;
+            width: 400px;
+            padding: 10px;
+        }
+        .choice a{
+            width: 120px;
+            height: 80px;
+            background-color: #fed6e3;
+            box-shadow: 4px 8px 10px #888888;
+            text-decoration: none;
+            color: black;
+            border-radius: inherit;
+            padding: 5px;
+            text-align: center;
+        }
+        .choice a:hover{
+            opacity: 0.3;
+        }
+        .virus img#a{
+            position: absolute;
+            width: 40px;
+            top: 100px;
+            left: 250px;
+            opacity: 0.3;
+            animation: domove 10s infinite;
+            animation-delay: 0.5s;
+        }
+        .virus img#a-{
+            position: absolute;
+            width: 40px;
+            top: 100px;
+            left: 250px;
+            opacity: 0.3;
+            animation: domove- 10s infinite;
+            animation-delay: 0.5s;
+        }
+        .virus img#b{
+            position: absolute;
+            width: 40px;
+            top: 100px;
+            left: 400px;
+            opacity: 0.3;
+            animation: domove 10s infinite;
+            animation-delay: 1.5s;
+        }
+        .virus img#b_{
+            position: absolute;
+            width: 40px;
+            top: 100px;
+            left: 400px;
+            opacity: 0.3;
+            animation: domove_ 10s infinite;
+            animation-delay: 1.5s;
+        }
+        .virus img#c{
+            position: absolute;
+            width: 40px;
+            top: 180px;
+            left: 550px;
+            opacity: 0.3;
+            animation: domove 10s infinite;
+            animation-delay: 1s;
+        }
+        .virus img#c-{
+            position: absolute;
+            width: 40px;
+            top: 180px;
+            left: 550px;
+            opacity: 0.3;
+            animation: domove- 10s infinite;
+            animation-delay: 1s;
+        }
+        .virus img#d{
+            position: absolute;
+            width: 40px;
+            top: 230px;
+            left: 350px;
+            opacity: 0.3;
+            animation: domove 10s infinite;
+            animation-delay: 2s;
+        }
+        .virus img#d_{
+            position: absolute;
+            width: 40px;
+            top: 230px;
+            left: 350px;
+            opacity: 0.3;
+            animation: domove_ 10s infinite;
+            animation-delay: 2s;
+        }
+        @keyframes domove{
+            0%{
+                transform: rotate(30deg);
+            }
+            25%{
+                transform: translate(30px, 60px) rotate(120deg);
+            }
+            50%{
+                transform: translate(-30px) rotate(210deg);
+            }
+            75%{
+                transform: translate(30px, -60px) rotate(300deg);
+            }
+            100%{
+                transform: rotate(30deg);
+            }
+        }
+        @keyframes domove-{
+            0%{
+                transform: rotate(30deg);
+            }
+            25%{
+                transform: translate(30px, 60px) rotate(120deg);
+            }
+            50%{
+                transform: translate(-100px) rotate(210deg);
+            }
+            75%{
+                transform: translate(30px, -60px) rotate(300deg);
+            }
+            100%{
+                transform: rotate(30deg);
+            }
+        }
+        @keyframes domove_{
+            0%{
+                transform: rotate(30deg);
+            }
+            25%{
+                transform: translate(30px, 60px) rotate(120deg);
+            }
+            50%{
+                transform: translate(100px) rotate(210deg);
+            }
+            75%{
+                transform: translate(30px, -60px) rotate(300deg);
+            }
+            100%{
+                transform: rotate(30deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" id="menu">菜单</a>
+        <ul>
+            <li><a href="#" id="process" class="active">关卡</a></li>
+            <li><a href="#" id="achievement" class="active">成就</a></li>
+        </ul>
+    </header>
+    <div class="frame">
+        <div class="board">
+            <div class="antenna"><img src="./broadcast-tower-solid.svg" alt=""></div>
+            <div class="video">
+                <video id="video" controls="controls">
+                    <source src="./02 结局困死 英年早逝.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="button play"><img src="./play-circle-solid.svg" alt=""></div>
+            <div class="button pause"><img src="./pause-circle-solid.svg" alt=""></div>
+            <div class="button stop"><img src="./stop-circle-solid.svg" alt=""></div>
+            <div class="button lines"><img src="./grip-lines-solid.svg" alt=""></div>        
+        </div>
+        <div class="knowledge">
+            <a href="#" id="science">科普</a>
+            <div class="content">
+                <span></span>
+                <div class="article">
+                    ContentContent<br/>
+                    ContentContentContent<br/>
+                    ContentContentContentContentabcdefgh<br/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="choice">
+        <a href="#" class="left">LEFT</a>
+        <a href="#" class="right">RIGHT</a>
+    </div>
+    <div class="virus">
+        <img src="./virus-solid.svg" id="a">
+        <img src="./virus-solid.svg" id="a-">
+        <img src="./virus-solid.svg" id="b">
+        <img src="./virus-solid.svg" id="b_">
+        <img src="./virus-solid.svg" id="c">
+        <img src="./virus-solid.svg" id="c-">
+        <img src="./virus-solid.svg" id="d">
+        <img src="./virus-solid.svg" id="d_">
+    </div>
+</body>
+</html>
+<script>
+    video.onended = function() {
+        document.getElementsByClassName("choice")[0].style.display = "flex";
+    }
+    var science_cnt = 0;
+    science.onclick = function() {
+        science_cnt %= 2;
+        if (science_cnt == 0) {
+            document.getElementsByClassName("content")[0].style.display = "flex";
+        }
+        else {
+            document.getElementsByClassName("content")[0].style.display = "none";
+        }
+        ++science_cnt;
+    }
+
+</script>

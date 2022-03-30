@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <!-- <link rel="stylesheet" href="../static/home.css"> -->
+    <title>index</title>
+    <style>
+        .board span{
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            transform: translateX(-50%) translateY(-50%) scale(3);
+            font-weight: bold;
+            color: #888888;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .board a{
+            position: absolute;
+            color: #fff;
+            text-decoration: none;
+            padding: 6px 25px;
+            border-radius: 20px;
+            font-weight: 600;
+            background-color: black;
+            opacity: 0.8;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%) scale(1.5);
+            z-index: 2;
+        }
+        .board a:hover{
+            box-shadow: 2px 4px 6px #888888;
+        }
+    </style>
+</head>
+<body>
+    <div class="board">
+        <span>后疫情时代</span>
+        <a href="http://127.0.0.1:5000/01">开始游戏</a>
+        <div class="imgs">
+            <div class="top">
+                <div class="img"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (2).jpg') }}" alt=""></div>
+                <div class="img"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (3).jpg') }}" alt=""></div>
+                <div class="img"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (4).jpg') }}" alt=""></div>
+                <div class="img"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (5).jpg') }}" alt=""></div>
+                <div class="img"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (6).jpg') }}" alt=""></div>
+            </div>
+            <div class="left-bottom">
+                <div class="img"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (7).jpg') }}" alt=""></div>
+                <div class="img"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (8).jpg') }}" alt=""></div>
+                <div class="img"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (9).jpg') }}" alt=""></div>
+                <div class="img"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (10).jpg') }}" alt=""></div>
+                <div class="img"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (11).jpg') }}" alt=""></div>
+            </div>
+            <div class="right-bottom">
+                <div class="img"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (12).jpg') }}" alt=""></div>
+                <div class="img"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (13).jpg') }}" alt=""></div>
+                <div class="img"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (14).jpg') }}" alt=""></div>
+                <div class="img"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (15).jpg') }}" alt=""></div>
+                <div class="img"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (16).jpg') }}" alt=""></div>
+            </div>
+            <div class="middle">
+                <div class="img" style="position: absolute; top: -80px; left: -24px;"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (17).jpg') }}" alt=""></div>
+                <div class="img" style="position: absolute; top: 20px; left: -110px;"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (18).jpg') }}" alt=""></div>
+                <div class="img" style="position: absolute; top: 20px; left: 60px;"><img src="{{ url_for('static', filename='./img/548f23707efbcba18d0eeafe1178e15 (19).jpg') }}" alt=""></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

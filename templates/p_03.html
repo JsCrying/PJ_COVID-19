@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <title>index</title>
+    <style>
+        .choice{
+            position: absolute;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 20px;
+            top: 70%;
+            left: 28%;
+            width: 400px;
+            padding: 10px;
+        }
+        .choice a{
+            width: 150px;
+            height: 100px;
+            box-shadow: 4px 8px 10px #888888;
+            text-decoration: none;
+            border-radius: inherit;;
+            text-align: center;
+        }
+        .choice a:hover{
+            opacity: 0.3;
+        }
+        .virus img#a{
+            position: absolute;
+            width: 40px;
+            top: 100px;
+            left: 250px;
+            opacity: 0.3;
+            animation: domove 10s infinite;
+            animation-delay: 0.5s;
+        }
+        .virus img#a-{
+            position: absolute;
+            width: 40px;
+            top: 100px;
+            left: 250px;
+            opacity: 0.3;
+            animation: domove- 10s infinite;
+            animation-delay: 0.5s;
+        }
+        .virus img#b{
+            position: absolute;
+            width: 40px;
+            top: 100px;
+            left: 400px;
+            opacity: 0.3;
+            animation: domove 10s infinite;
+            animation-delay: 1.5s;
+        }
+        .virus img#b_{
+            position: absolute;
+            width: 40px;
+            top: 100px;
+            left: 400px;
+            opacity: 0.3;
+            animation: domove_ 10s infinite;
+            animation-delay: 1.5s;
+        }
+        .virus img#c{
+            position: absolute;
+            width: 40px;
+            top: 180px;
+            left: 550px;
+            opacity: 0.3;
+            animation: domove 10s infinite;
+            animation-delay: 1s;
+        }
+        .virus img#c-{
+            position: absolute;
+            width: 40px;
+            top: 180px;
+            left: 550px;
+            opacity: 0.3;
+            animation: domove- 10s infinite;
+            animation-delay: 1s;
+        }
+        .virus img#d{
+            position: absolute;
+            width: 40px;
+            top: 230px;
+            left: 350px;
+            opacity: 0.3;
+            animation: domove 10s infinite;
+            animation-delay: 2s;
+        }
+        .virus img#d_{
+            position: absolute;
+            width: 40px;
+            top: 230px;
+            left: 350px;
+            opacity: 0.3;
+            animation: domove_ 10s infinite;
+            animation-delay: 2s;
+        }
+        @keyframes domove{
+            0%{
+                transform: rotate(30deg);
+            }
+            25%{
+                transform: translate(30px, 60px) rotate(120deg);
+            }
+            50%{
+                transform: translate(-30px) rotate(210deg);
+            }
+            75%{
+                transform: translate(30px, -60px) rotate(300deg);
+            }
+            100%{
+                transform: rotate(30deg);
+            }
+        }
+        @keyframes domove-{
+            0%{
+                transform: rotate(30deg);
+            }
+            25%{
+                transform: translate(30px, 60px) rotate(120deg);
+            }
+            50%{
+                transform: translate(-100px) rotate(210deg);
+            }
+            75%{
+                transform: translate(30px, -60px) rotate(300deg);
+            }
+            100%{
+                transform: rotate(30deg);
+            }
+        }
+        @keyframes domove_{
+            0%{
+                transform: rotate(30deg);
+            }
+            25%{
+                transform: translate(30px, 60px) rotate(120deg);
+            }
+            50%{
+                transform: translate(100px) rotate(210deg);
+            }
+            75%{
+                transform: translate(30px, -60px) rotate(300deg);
+            }
+            100%{
+                transform: rotate(30deg);
+            }
+        }
+        .level{
+            position: absolute;
+            top: 15px;
+            left: 850px;
+            border-color: black;
+            z-index: 100;
+            display: none;
+        }
+        .level ul{
+            display: block;
+        }
+        .level ul li{
+            list-style: none;
+            margin-top: 15px;
+        }
+        .level ul li a{
+            color: #fff;
+            text-decoration: none;
+            padding: 6px 25px;
+            border-radius: 20px;
+            font-weight: 600;
+            background-color: #fff;
+            color: #2b1065;
+        }
+        .level ul li a:hover{
+            box-shadow: 2px 4px 6px #888888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" id="menu">菜单</a>
+        <ul>
+            <li><a href="#" id="process" class="active">关卡</a></li>
+            <li><a href="#" id="achievement" class="active">成就</a></li>
+        </ul>
+    </header>
+    <div class="level">
+        <ul>
+            <li><a href="http://127.0.0.1:5000">Home Page</a></li>
+            <li><a href="http://127.0.0.1:5000/01">刚刚入侵人体</a></li>
+        </ul>
+    </div>
+    <div class="achievement_board">
+        <span>成就列表</span>
+        <div class="ending">
+            <div name="ending0">1.达成结局：英年早逝</div>
+            <div name="ending1">2.达成结局：无毒不丈夫</div>
+            <div name="ending2">3.达成结局：小病毒想当发明家</div>
+            <div name="ending3">4.达成结局：苦海无涯</div>
+            <div name="ending4">5.达成结局：空城计</div>
+            <div name="ending5">6.达成结局：君子报仇</div>
+            <div name="ending6">7.达成结局：人事已尽天命难违</div>
+            <div name="ending7">8.The End</div>
+        </div>
+    </div>
+    <div class="frame">
+        <div class="board">
+            <div class="antenna"><img src="{{ url_for('static', filename='broadcast-tower-solid.svg') }}" alt=""></div>
+            <div class="video">
+                <video id="video" controls="controls">
+                    <source src="{{ url_for('static', filename='./video/03 循序渐进 先遣队喷嚏大炮.mp4') }}" type="video/mp4" />
+                </video>
+            </div>
+            <div class="button play"><img src="{{ url_for('static', filename='play-circle-solid.svg') }}" alt=""></div>
+            <div class="button pause"><img src="{{ url_for('static', filename='pause-circle-solid.svg') }}" alt=""></div>
+            <div class="button stop"><img src="{{ url_for('static', filename='stop-circle-solid.svg') }}" alt=""></div>
+            <div class="button lines"><img src="{{ url_for('static', filename='grip-lines-solid.svg') }}" alt=""></div>        
+        </div>
+        <div class="knowledge">
+            <a href="#" id="science">科普</a>
+            <div class="content">
+                <span></span>
+                <div class="article">
+                    1、新冠传播途径</br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目前可以确定的新冠病毒传播途径主要有：直接传播、气溶胶传播和接触传播。直接传播是指患者喷嚏、咳嗽、说话的飞沫，呼出的气体近距离直接吸入导致的感染；气溶胶传播是指飞沫混合在空气中，形成气溶胶，吸入后导致感染；接触传播是指飞沫沉积在物品表面，接触污染手后，再接触口腔、鼻腔、眼睛等粘膜，导致感染。
+                    </br>
+                    </br>
+                    2、关于飞沫</br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;越小的颗粒，空气的粘性作用就越明显。定量来说，静止空气中同一高度的小颗粒停留时间跟其表面积成反比。对于1微米的颗粒，在静止空气中沉降时间为1小时以上。而环境中总有风吹草动，于是这些颗粒几乎永远不会沉降，始终停留在空气中。这也是为什么抽烟的人可能早已经消失不见，但余味还久久不散。含有新冠病毒的飞沫核尺寸就在亚微米到微米的范围，与烟草燃烧后的颗粒尺度类似。因此，飞沫核在空气中可以悬浮很久，并且在空气的推波助澜下漂移到远方。飞沫核中的冠状病毒有蛋白质膜壳的保护，可能在相当长的时间保持活性。若是被人吸入体内，就有可能导致感染新型冠状病毒。
+                    </br>
+                    </br>
+                    3、关于气溶胶</br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在气体中稳定分散悬浮的液态或固体小颗粒叫做气溶胶。与喷嚏、咳嗽、说话相比，病毒携带者的正常呼吸是最温和的活动，但也是最防不胜防的。这是因为，在呼吸的时候，肺部在做大量、长时间的雾化，并且雾化的颗粒极小。也就是说，新冠病毒携带者哪怕不咳嗽、不打喷嚏，也会悄无声息不间断地释放含病毒的气溶胶。因此，确诊和疑似的病人要坚决隔离。
+                    </br>
+                    </br>
+                    4、三种途径比较</br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在这三种传播途径里，“直接传播”（即“飞沫传播”）可以通过戴口罩有效防护，“接触传播”途径可以靠勤洗手、勤消毒来切断。新冠病毒在硬且光滑的表面可以存活24-48小时，但在皮肤上5分钟内病毒的感染性就减少100至1000倍，手口接触不大可能成为主要病毒传播途径。相比之下，我们对“气溶胶传播”途径的认识还显得薄弱。在气溶胶状态下，一小时后病毒都可能保持感染能力。呼吸道上皮细胞可能脱落并成为病毒离开人体的载体，为病毒保持活性提供条件。而这一小时内气溶胶凭借风势可以上青云也可以传播到几公里外的地方。当然，我们也不必过于担心，因为长距离伴随着病毒浓度的急剧下降，可能远远低于感染剂量。
+                    </br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="choice">
+        <a href="http://127.0.0.1:5000/04" class="left">开拓新殖民地，而自己则和其他同胞留下，寻求变异之道</a>
+    </div>
+    <div class="virus">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="a">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="a-">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="b">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="b_">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="c">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="c-">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="d">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="d_">
+    </div>
+</body>
+</html>
+<script>
+    video.onended = function() {
+        document.getElementsByClassName("choice")[0].style.display = "flex";
+    }
+    var science_cnt = 0;
+    science.onclick = function() {
+        science_cnt %= 2;
+        if (science_cnt == 0) {
+            document.getElementsByClassName("content")[0].style.display = "flex";
+        }
+        else {
+            document.getElementsByClassName("content")[0].style.display = "none";
+        }
+        ++science_cnt;
+    }
+    var process_cnt = 0;
+    process.onclick = function() {
+        process_cnt %= 2;
+        if (process_cnt == 0) {
+            document.getElementsByClassName("level")[0].style.display = "inline";
+        }
+        else {
+            document.getElementsByClassName("level")[0].style.display = "none";
+        }
+        ++process_cnt;
+    }
+    var achievement_cnt = 0;
+    achievement.onclick = function() {
+        achievement_cnt %= 2;
+        if (achievement_cnt == 0) {
+            document.getElementsByClassName("achievement_board")[0].style.display = "inline";
+        }
+        else {
+            document.getElementsByClassName("achievement_board")[0].style.display = "none";
+        }
+        ++achievement_cnt;
+    }
+    var index;
+    var recv;
+    var str;
+    window.onload = function() {
+        xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        xhr.open('GET', '/achievement_judge');
+        xhr.send();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    recv = xhr.response;
+                    if (recv.ending0 == 1)
+                    document.getElementsByName('ending0')[0].style.textDecoration = "line-through";
+                    if (recv.ending1 == 1)
+                    document.getElementsByName('ending1')[0].style.textDecoration = "line-through";
+                    if (recv.ending2 == 1)
+                    document.getElementsByName('ending2')[0].style.textDecoration = "line-through";
+                    if (recv.ending3 == 1)
+                    document.getElementsByName('ending3')[0].style.textDecoration = "line-through";
+                    if (recv.ending4 == 1)
+                    document.getElementsByName('ending4')[0].style.textDecoration = "line-through";
+                    if (recv.ending5 == 1)
+                    document.getElementsByName('ending5')[0].style.textDecoration = "line-through";
+                    if (recv.ending6 == 1)
+                    document.getElementsByName('ending6')[0].style.textDecoration = "line-through";
+                    if (recv.ending7 == 1)
+                    document.getElementsByName('ending7')[0].style.textDecoration = "line-through";
+                }
+            }
+        }
+    }
+</script>

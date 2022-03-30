@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <title>index</title>
+    <style>
+        .choice{
+            position: absolute;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 20px;
+            top: 70%;
+            left: 18%;
+            width: 400px;
+            padding: 10px;
+        }
+        .choice a{
+            width: 120px;
+            height: 80px;
+            box-shadow: 4px 8px 10px #888888;
+            text-decoration: none;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .choice a:hover{
+            opacity: 0.3;
+        }
+        .virus img#a{
+            position: absolute;
+            width: 40px;
+            top: 100px;
+            left: 250px;
+            opacity: 0.3;
+            animation: domove 10s infinite;
+            animation-delay: 0.5s;
+        }
+        .virus img#a-{
+            position: absolute;
+            width: 40px;
+            top: 100px;
+            left: 250px;
+            opacity: 0.3;
+            animation: domove- 10s infinite;
+            animation-delay: 0.5s;
+        }
+        .virus img#b{
+            position: absolute;
+            width: 40px;
+            top: 100px;
+            left: 400px;
+            opacity: 0.3;
+            animation: domove 10s infinite;
+            animation-delay: 1.5s;
+        }
+        .virus img#b_{
+            position: absolute;
+            width: 40px;
+            top: 100px;
+            left: 400px;
+            opacity: 0.3;
+            animation: domove_ 10s infinite;
+            animation-delay: 1.5s;
+        }
+        .virus img#c{
+            position: absolute;
+            width: 40px;
+            top: 180px;
+            left: 550px;
+            opacity: 0.3;
+            animation: domove 10s infinite;
+            animation-delay: 1s;
+        }
+        .virus img#c-{
+            position: absolute;
+            width: 40px;
+            top: 180px;
+            left: 550px;
+            opacity: 0.3;
+            animation: domove- 10s infinite;
+            animation-delay: 1s;
+        }
+        .virus img#d{
+            position: absolute;
+            width: 40px;
+            top: 230px;
+            left: 350px;
+            opacity: 0.3;
+            animation: domove 10s infinite;
+            animation-delay: 2s;
+        }
+        .virus img#d_{
+            position: absolute;
+            width: 40px;
+            top: 230px;
+            left: 350px;
+            opacity: 0.3;
+            animation: domove_ 10s infinite;
+            animation-delay: 2s;
+        }
+        @keyframes domove{
+            0%{
+                transform: rotate(30deg);
+            }
+            25%{
+                transform: translate(30px, 60px) rotate(120deg);
+            }
+            50%{
+                transform: translate(-30px) rotate(210deg);
+            }
+            75%{
+                transform: translate(30px, -60px) rotate(300deg);
+            }
+            100%{
+                transform: rotate(30deg);
+            }
+        }
+        @keyframes domove-{
+            0%{
+                transform: rotate(30deg);
+            }
+            25%{
+                transform: translate(30px, 60px) rotate(120deg);
+            }
+            50%{
+                transform: translate(-100px) rotate(210deg);
+            }
+            75%{
+                transform: translate(30px, -60px) rotate(300deg);
+            }
+            100%{
+                transform: rotate(30deg);
+            }
+        }
+        @keyframes domove_{
+            0%{
+                transform: rotate(30deg);
+            }
+            25%{
+                transform: translate(30px, 60px) rotate(120deg);
+            }
+            50%{
+                transform: translate(100px) rotate(210deg);
+            }
+            75%{
+                transform: translate(30px, -60px) rotate(300deg);
+            }
+            100%{
+                transform: rotate(30deg);
+            }
+        }
+        .level{
+            position: absolute;
+            top: 15px;
+            left: 850px;
+            border-color: black;
+            z-index: 100;
+            display: none;
+        }
+        .level ul{
+            display: block;
+        }
+        .level ul li{
+            list-style: none;
+            margin-top: 15px;
+        }
+        .level ul li a{
+            color: #fff;
+            text-decoration: none;
+            padding: 6px 25px;
+            border-radius: 20px;
+            font-weight: 600;
+            background-color: #fff;
+            color: #2b1065;
+        }
+        .level ul li a:hover{
+            box-shadow: 2px 4px 6px #888888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" id="menu">菜单</a>
+        <ul>
+            <li><a href="#" id="process" class="active">关卡</a></li>
+            <li><a href="#" id="achievement" class="active">成就</a></li>
+        </ul>
+    </header>
+    <div class="level">
+        <ul>
+            <li><a href="http://127.0.0.1:5000">Home Page</a></li>
+            <li><a href="http://127.0.0.1:5000/01">刚刚入侵人体</a></li>
+            <li><a href="http://127.0.0.1:5000/03">派遣先锋队伍</a></li>
+        </ul>
+    </div>
+    <div class="achievement_board">
+        <span>成就列表</span>
+        <div class="ending">
+            <div name="ending0">1.达成结局：英年早逝</div>
+            <div name="ending1">2.达成结局：无毒不丈夫</div>
+            <div name="ending2">3.达成结局：小病毒想当发明家</div>
+            <div name="ending3">4.达成结局：苦海无涯</div>
+            <div name="ending4">5.达成结局：空城计</div>
+            <div name="ending5">6.达成结局：君子报仇</div>
+            <div name="ending6">7.达成结局：人事已尽天命难违</div>
+            <div name="ending7">8.The End</div>
+        </div>
+    </div>
+    <div class="frame">
+        <div class="board">
+            <div class="antenna"><img src="{{ url_for('static', filename='broadcast-tower-solid.svg') }}" alt=""></div>
+            <div class="video">
+                <video id="video" controls="controls">
+                    <source src="{{ url_for('static', filename='./video/04 病毒构造和复制过程.mp4') }}" type="video/mp4" />
+                </video>
+            </div>
+            <div class="button play"><img src="{{ url_for('static', filename='play-circle-solid.svg') }}" alt=""></div>
+            <div class="button pause"><img src="{{ url_for('static', filename='pause-circle-solid.svg') }}" alt=""></div>
+            <div class="button stop"><img src="{{ url_for('static', filename='stop-circle-solid.svg') }}" alt=""></div>
+            <div class="button lines"><img src="{{ url_for('static', filename='grip-lines-solid.svg') }}" alt=""></div>        
+        </div>
+        <div class="knowledge">
+            <a href="#" id="science">科普</a>
+            <div class="content">
+                <span></span>
+                <div class="article">
+                    1、病毒结构</br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冠状病毒由双层脂质的囊膜组成，穿插刺突糖蛋白（即S蛋白）、包膜蛋白（E-protein）和膜蛋白（M-protein），某些还会有血凝素酯酶（HE）。新冠病毒也是类似，其内部为RNA和衣壳蛋白（N-protein）组成的核蛋白核心，呈螺旋式结构。除了这些结构蛋白，冠状病毒的RNA还会表达非结构蛋白如聚合酶、蛋白酶等行使不同的功能。
+                    </br>
+                    </br>
+                    2、病毒为何能变异？</br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新冠病毒是RNA病毒，与DNA病毒有明显的差别。DNA是双链，即互补链，在其复制、翻译过程中有纠错功能，一旦某条链出错，另一条链无法互补，就会发现该错误，因此一般的DNA病毒、细菌等都比较稳定。但是RNA是单链的，是按照上一条模板链来复制的，中间一旦发生错误就无法发现和纠错，因此容易发生突变。其突变速度一是与其结构相关，二是与传播频率相关，一般流行越广泛，传播频率越高，突变机会就更多。因此，病毒变异是常有的事。随着疫情发展，特别是在感染率很高的情况下，继续发现新的变异病毒并不意外。
+                    </br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="choice">
+        <a href="http://127.0.0.1:5000/09" class="left">不求质量求数量，变异随缘</a>
+        <a href="http://127.0.0.1:5000/05" class="right">不求数量求质量，自我创造</a>
+    </div>
+    <div class="virus">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="a">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="a-">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="b">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="b_">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="c">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="c-">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="d">
+        <img src="{{ url_for('static', filename='virus-solid.svg') }}" id="d_">
+    </div>
+</body>
+</html>
+<script>
+    video.onended = function() {
+        document.getElementsByClassName("choice")[0].style.display = "flex";
+    }
+    var science_cnt = 0;
+    science.onclick = function() {
+        science_cnt %= 2;
+        if (science_cnt == 0) {
+            document.getElementsByClassName("content")[0].style.display = "flex";
+        }
+        else {
+            document.getElementsByClassName("content")[0].style.display = "none";
+        }
+        ++science_cnt;
+    }
+    var process_cnt = 0;
+    process.onclick = function() {
+        process_cnt %= 2;
+        if (process_cnt == 0) {
+            document.getElementsByClassName("level")[0].style.display = "inline";
+        }
+        else {
+            document.getElementsByClassName("level")[0].style.display = "none";
+        }
+        ++process_cnt;
+    }
+    var achievement_cnt = 0;
+    achievement.onclick = function() {
+        achievement_cnt %= 2;
+        if (achievement_cnt == 0) {
+            document.getElementsByClassName("achievement_board")[0].style.display = "inline";
+        }
+        else {
+            document.getElementsByClassName("achievement_board")[0].style.display = "none";
+        }
+        ++achievement_cnt;
+    }
+    var index;
+    var recv;
+    var str;
+    window.onload = function() {
+        xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        xhr.open('GET', '/achievement_judge');
+        xhr.send();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    recv = xhr.response;
+                    if (recv.ending0 == 1)
+                    document.getElementsByName('ending0')[0].style.textDecoration = "line-through";
+                    if (recv.ending1 == 1)
+                    document.getElementsByName('ending1')[0].style.textDecoration = "line-through";
+                    if (recv.ending2 == 1)
+                    document.getElementsByName('ending2')[0].style.textDecoration = "line-through";
+                    if (recv.ending3 == 1)
+                    document.getElementsByName('ending3')[0].style.textDecoration = "line-through";
+                    if (recv.ending4 == 1)
+                    document.getElementsByName('ending4')[0].style.textDecoration = "line-through";
+                    if (recv.ending5 == 1)
+                    document.getElementsByName('ending5')[0].style.textDecoration = "line-through";
+                    if (recv.ending6 == 1)
+                    document.getElementsByName('ending6')[0].style.textDecoration = "line-through";
+                    if (recv.ending7 == 1)
+                    document.getElementsByName('ending7')[0].style.textDecoration = "line-through";
+                }
+            }
+        }
+    }
+</script>
